@@ -1,0 +1,63 @@
+﻿@section css{
+    <link href="~/Content/themes/notifications.css" rel="stylesheet" />
+}
+
+@using HockeyLibrary
+@model MvcApplicationHockeyApp.Models.ViewModel
+
+@if (Model.Status == EventStatus.Open)
+{
+    <div class="container">
+        <div class="row">
+            <div class='col-sm-6'>
+                <h2>Next Game on @Model.Event.Dt.ToLongDateString() at @Model.Event.Dt.ToShortTimeString()</h2>
+                <h2>Sign Up!!</h2>
+                <div class="container">
+                    <div class="row centered-form">
+                        <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">Please sign up! <small>It's free!</small></h3>
+                                </div>
+                                <div class="panel-body">
+                                    <form role="form" method="post" action="/Home/AddSignUp">
+                                        <div class="row">
+                                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                                <div class="form-group">
+                                                    <input type="text" name="firstname" id="first_name" class="form-control input-sm" placeholder="First Name">
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                                <div class="form-group">
+                                                    <input type="text" name="lastname" id="last_name" class="form-control input-sm" placeholder="Last Name">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <input type="email" name="email" id="email" class="form-control input-sm" placeholder="Email Address">
+                                        </div>
+                                        <input type="hidden" name="eventid" value="@Model.Event.EventId" />
+
+                                        <input type="submit" value="Register" class="btn btn-info btn-block">
+
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+else if (Model.Status == EventStatus.InThePast)
+{
+    <br />
+    <h1>New Game not updated</h1>
+}
+else
+{
+    <br />
+    <h1>Sorry this weeks game is filled up already</h1>
+}

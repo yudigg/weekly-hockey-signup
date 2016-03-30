@@ -1,0 +1,49 @@
+﻿
+<h1> New Game</h1>
+<hr />
+
+
+<form class="form-group" method="post" action="/admin/createGame">    
+    <div class="container">
+        <div class="row">
+            <div class='col-sm-6'>
+                <div class="form-group">
+                    <label>
+                        Select number of players
+                        <select name="players">
+                            @for (int i = 0; i < 25; i++)
+                            {
+                                <option>@i</option>
+                            }
+                        </select>
+                    </label>
+                    <div class='input-group date' id='dt1'>
+                        <label>
+                            Select Date and Time
+                            <input type='text' class="form-control" name="dateTime" />
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                            </span>
+                        </label>                       
+                    </div>
+                </div>
+            </div>
+          
+            <br />
+            <label>                
+                <input type="checkbox" class="checkbox" value="true" name="email" />
+                <input type="hidden" value="false" name="email"  />
+                Send Email</label>            
+            <button class="btn btn-primary">Create Link</button> 
+        </div>
+    </div>
+  
+</form>
+
+@section scripts
+{
+    <script src="/Scripts/DtScript.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.1/moment.min.js"></script>
+<script src="https://cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/master/build/js/bootstrap-datetimepicker.min.js"></script>
+<link rel=" stylesheet" href="https://cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/master/build/css/bootstrap-datetimepicker.min.css" />
+        }

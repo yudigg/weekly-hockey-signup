@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>   
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"rel="stylesheet">  
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    @RenderSection("css", false)
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">About Us</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/home/addSignup">Current Game</a></li>
+                    <li><a href="#">Current Sign Ups</a></li>
+                    <li><a href="#">Page 3</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/Admin/index"><span class="glyphicon glyphicon-lock"></span>Admin</a></li>
+                    <li><a href="/Admin/Edit"><span class="glyphicon glyphicon-lock"></span>Edit</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+
+        @RenderBody()
+    </div>
+    
+
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

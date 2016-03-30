@@ -1,0 +1,26 @@
+﻿@using HockeyLibrary
+@model IEnumerable<SignUp>
+
+
+<table class="table table-bordered table-striped table-hover">
+        <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Email</th>
+        </tr>
+    <tbody>
+        @foreach (SignUp s in Model)
+        {
+            <tr>
+                <td>@s.FirstName</td>
+                <td>@s.LastName</td>
+                <td>@s.Email</td>
+                <td><form action="Edit" method="post">
+                    <button class="btn btn-danger">Delete</button>
+                    </form></td>
+            </tr>
+        }
+        
+     >
+    </tbody>
+</table>

@@ -1,0 +1,25 @@
+space in jquerry digs further
+
+admin form
+ dropbox number of people
+  date
+  submmit btn create link
+     date,checkbox 
+(newEvent)GetNewEventId
+CreateEventDetails
+SendEmails
+
+DeleteSignUp
+
+
+
+
+
+user
+
+homePage
+  sign up form
+   link for event
+GetNewEventId
+(new SignUps)SignUpsDetails
+Create notifications
